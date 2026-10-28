@@ -1,11 +1,23 @@
-# Floating To-Do — Windows trial
+# Floating To-Do
 
-A private trial build of the Windows floating task list.
+Native floating task list for macOS and Windows. Current source version: **1.3.1**.
 
-`FloatingToDo-Windows-Source.zip` contains the complete Tauri/Rust/HTML source project, dependency lockfiles, tests, build script and documentation. It preserves the complete folder structure when uploaded through GitHub’s web interface.
+## Downloads and source
 
-The Windows Actions workflow extracts the source, runs tests and generates an NSIS installer. Download **FloatingToDo-Windows-x64** from the successful run’s Artifacts, unzip it and share the `*-setup.exe` with your tester.
+- `FloatingToDo-Mac-Latest.zip`: universal Intel + Apple Silicon app, macOS **12.6 or newer**. Ad-hoc signed, not notarized. macOS 12.6 physical hardware has not been tested.
+- `FloatingToDo-Source.zip`: Mac SwiftUI/AppKit project.
+- `FloatingToDo-Windows-Source.zip`: Windows Tauri/Rust/JavaScript project. Extract before building.
+- Windows installer: Actions → latest successful **Build Windows trial** run → artifact **FloatingToDo-Windows-x64**. The installer targets Windows 10/11 x64 and is unsigned.
 
-Requires Windows 10/11 x64. The installer can download Microsoft WebView2 if needed. This trial is unsigned. Native window behavior and the installation must still be tested on Windows.
+## Current behavior
 
-For local development, extract the source ZIP and read its README.md. No personal tasks are included.
+Right-click the circular widget for Quit and Quick Add. Quick Add supports deadlines. Click outside the panel to collapse it; the panel X asks before quitting. Gear settings include task size, text alignment, English/Chinese, and 12/24-hour time. Drag tasks to reorder directly; drag completed/cancelled tasks onto the footer trash, then confirm deletion.
+
+English text uses a larger regular Courier New face. Chinese uses PingFang Light on macOS and the installed Windows Chinese fallback on Windows; no Apple fonts are redistributed.
+
+Tasks stay local. This repository contains no user task data. On newer macOS versions, clicking wallpaper may separately trigger the user's system-level Show Desktop setting; the app does not alter that preference.
+
+## Build
+
+Mac: extract the Mac source, run `./build.sh` on a Mac with Apple Command Line Tools.
+Windows: extract the Windows source and run `pnpm install --frozen-lockfile`, `pnpm test`, and `pnpm build:windows` on Windows with Rust and the Windows desktop build tools. The repository workflow extracts the Windows source ZIP automatically.
