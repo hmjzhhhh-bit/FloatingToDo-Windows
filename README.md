@@ -1,6 +1,6 @@
 # Floating To-Do
 
-Native floating task list for macOS and Windows. Current source version: **1.3.1**.
+Native floating task list for macOS and Windows. Current source version: **1.3.2**.
 
 ## Downloads and source
 
@@ -11,7 +11,7 @@ Native floating task list for macOS and Windows. Current source version: **1.3.1
 
 ## Current behavior
 
-Right-click the circular widget for Quit and Quick Add. Quick Add supports deadlines. Click outside the panel to collapse it; the panel X asks before quitting. Gear settings include task size, text alignment, English/Chinese, and 12/24-hour time. Drag tasks to reorder directly; drag completed/cancelled tasks onto the footer trash, then confirm deletion.
+Right-click the circular widget for Quit and Quick Add. Quick Add supports deadlines. Click outside the panel to collapse it; the panel X asks before quitting. Gear settings include task size, text alignment, English/Chinese, and 12/24-hour time. Drag tasks to reorder directly; marquee-select completed/cancelled tasks from blank list space, then drag the selected group onto the footer trash and confirm deletion.
 
 English text uses a larger regular Courier New face. Chinese uses PingFang Light on macOS and the installed Windows Chinese fallback on Windows; no Apple fonts are redistributed.
 
